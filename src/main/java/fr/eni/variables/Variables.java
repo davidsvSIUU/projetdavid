@@ -4,6 +4,7 @@
 
 package fr.eni.variables;
 
+import static java.lang.Integer.parseInt;
 import java.util.Arrays;
 import java.util.Dictionary;
 import java.util.Hashtable;
@@ -17,7 +18,9 @@ public class Variables {
 
     public static void main(String[] args) {
         // ---------------------int--------------------------
-        int intA = 20;
+        Scanner scanInput  = new Scanner(System.in);
+        System.out.print("Saisir une chaîne A : ");
+        int intA = parseInt(scanInput.next());
         int intB = 15;
         System.out.println(intA);
         System.out.println(intB); 
@@ -37,10 +40,9 @@ public class Variables {
         boolean boolAorB = boolA|boolB;
         System.out.println(boolAandB);
         System.out.println(boolAorB);       
-        // --------------------------------------------------
+        // --------------------------------------------------      
         
         // -------------------scanner------------------------
-        Scanner scanInput  = new Scanner(System.in);
         System.out.print("Saisir une chaîne A : ");
         String strA = scanInput.next();
         System.out.print("Saisir une chaîne B : ");
@@ -48,7 +50,7 @@ public class Variables {
         String strAplusB = strA + " " + strB;
         System.out.println(strAplusB); 
         // --------------------------------------------------
-        
+        repet(intA, strA);
         // -------------------liste--------------------------
         String[] arrStrA = {"a", "b", "c", "d"};
         int[] arrIntA = {10 , 20, 30, 40};
@@ -65,6 +67,14 @@ public class Variables {
         arrDblA[0] = 0;
         System.out.println(Arrays.toString(arrDblA));
         // --------------------------------------------------
-        
     }
+        //---------------------test--------------------------
+
+        public static void repet(int intA,String strA){
+            int i = 0;
+            while (i != intA){
+                System.out.println(strA);
+                i++;
+            }
+        }
 }
